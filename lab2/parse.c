@@ -126,8 +126,7 @@ instruction parsing_instr(const char *buffer, const int index) {
 		instr.r_t.r_i.rt = (fromBinary("00000000000111110000000000000000") & fromBinary(buffer)) >> 16;
 		instr.r_t.r_i.r_i.imm = fromBinary("00000000000000001111111111111111") & fromBinary(buffer);
 	}
-
-
+	mem_write_32(MEM_TEXT_START+index, fromBinary(buffer));
 	return instr;
 }
 

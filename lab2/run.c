@@ -138,6 +138,8 @@ void process_instruction(){
 //      printf("imm is %x\n", imm);
       if( rs_data< imm) {
         CURRENT_STATE.REGS[ INST_INFO[ index ].r_t.r_i.rt ] = 1;
+      } else {
+        CURRENT_STATE.REGS[ INST_INFO[ index ].r_t.r_i.rt ] = 0;
       }
       break;
     case 12:// andi
